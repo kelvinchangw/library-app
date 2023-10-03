@@ -1,10 +1,11 @@
 :root {
-    --eggplant: #493843;
-    --zomp: #61988E;
-    --ash-gray: #A0B2A6;
-    --silver: #CBBFBB;
-    --desert-sand: #EABDA8;
+    --platinum: #dfdfdf;
     --spacing-lrg: 24px;
+    --russian-violet: #472B5F;
+    --rich-black: #070618;
+    --lion: #B68857;
+    --silver: #F2E4DF;
+    --pale-dogwood: #D5B9B0;
 }
 
 * {
@@ -13,14 +14,109 @@
     font-family: "Poppins", sans-serif;
 }
 
-h1 {
+.title {
     font-weight: 600;
-    font-size: 44px;
+    font-size: 10rem;
+    color: var(--platinum);
+    text-shadow: 4px 4px 10px black;
+    user-select: none;
+    transition: 0.14s ease-out all;
 }
 
-.header {
+.title:hover {
+    letter-spacing: 8px;
+    color: var(--pale-dogwood);
+}
+
+body {
+    background-color: var(--rich-black);
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 6px; /* Vertical scrollbar width */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the draggable scroll handle */
+    border-radius: 6px; /* Radius of the draggable scroll handle */
+}
+
+
+.main {
+    height: 100vh;
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.background-container {
+    background-image: url("background.png");
+    background-size: cover;
+    height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 400px 0 0 400px;
+}
+
+.books-grid {
+    border: 2px solid var(--russian-violet);
+    height: 80vh;
+    width: 100vw;
+}
+
+.begin-btn {
+    min-height: 6rem;
+    max-height: 6rem;
+    width: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    border: transparent;
+    transition: 0.14s ease-out all;
+    user-select: none;
+    background-color: var(--russian-violet);
+    color: var(--platinum);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgb(0, 0, 0);
+}
+
+.begin-btn:hover {
+    transform: scale(1.06);
+    box-shadow: 0 2px 6px rgb(0, 0, 0);
+}
+
+.begin-btn:active {
+    transform: scale(1);
+    filter: brightness(70%);
+}
+
+
+
+
+.footer {
     display: flex;
     align-items: center;
-    padding: var(--spacing-lrg);
-    background-color: var(--silver);
+    justify-content: center;
+    color: var(--platinum);
+    height: 8vh;
+    font-size: 1.4rem;
+    gap: 8px;
+}
+
+
+.fa-github-square {
+    transition: transform 0.3s ease-in-out;
+    color: var(--lion);
+    font-size: 2rem;
+}
+.fa-github-square:hover {
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: all 0.2s ease-in-out;
+    color: var(--platinum)
 }
