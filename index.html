@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/d044f8f5da.js" crossorigin="anonymous"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,13 +16,29 @@
 <body>
     <!-- Title for header and eventual interactivity -->
     <header class="header">
-        <h1>LIBRARY</h1>
+        <div class="background-container">
+            <!-- <img class="background-img" src="/GitHub/library-app/background.png"> -->
+            <h1 class="title">THE LIBRARY</h1>
+            <button class="begin-btn" id="begin-btn">BEGIN</button>
+        </div>
     </header>
-    <main class="main container">
+    <main class="main container" id="main">
         <!-- Display books and also contain option to add a new book -->
         <div class="books-grid"></div>
-        <button class="btn add-btn">ADD BOOK</button>
     </main>
+    <footer class="footer">
+        <span>
+            Built by Weissey
+        </span>
+        <script>
+            document.write(new Date().getFullYear())
+        </script>
+        <a href="https://github.com/Weissey" target = "_blank" id = "gitIcon">
+            <i class="fa-brands fa-github-square"></i>
+        </a>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
