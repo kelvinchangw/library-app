@@ -79,12 +79,12 @@ body {
 .books-grid {
     padding: 4rem;
     box-sizing: border-box;
+    height: 100%;
 }
 
 .sidebar {
     border: 2px solid var(--russian-violet);
     width: 20vw;
-    height: 80vh;
     display: flex;
     flex-direction: column;
     row-gap: 4rem;
@@ -140,6 +140,11 @@ body {
     opacity: .3;
 }
 
+.add-book-form input.invalid {
+    border: 2.6px solid red;
+    box-shadow: 0 0 0 1px red;
+}
+
 .add-book-button {
     min-height: 4rem;
     max-height: 4rem;
@@ -162,7 +167,6 @@ body {
 .books-grid {
     border: 2px solid var(--russian-violet);
     width: 80vw;
-    height: 80vh;
 }
 
 .begin-btn {
@@ -198,7 +202,7 @@ button:active {
     align-items: center;
     justify-content: center;
     color: var(--platinum);
-    height: 8vh;
+    height: 4rem;
     font-size: 1.4rem;
     gap: 8px;
 }
