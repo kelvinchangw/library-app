@@ -75,13 +75,13 @@ body {
     padding: 400px 0 0 400px;
 }
 
-.side-bar,
+.sidebar,
 .books-grid {
     padding: 4rem;
     box-sizing: border-box;
 }
 
-.side-bar {
+.sidebar {
     border: 2px solid var(--russian-violet);
     width: 20vw;
     height: 80vh;
