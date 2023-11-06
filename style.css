@@ -37,6 +37,7 @@
 body {
     background-color: var(--rich-black);
     width: 100%;
+    color: var(--platinum)
 }
 
 ::-webkit-scrollbar {
@@ -54,6 +55,7 @@ body {
     padding: 4rem;
     display: flex;
     justify-content: center;
+    column-gap: 1rem;
 }
 
 .background-container {
@@ -67,10 +69,53 @@ body {
     padding: 400px 0 0 400px;
 }
 
+.side-bar,
+.books-grid {
+    padding: 4rem;
+    box-sizing: border-box;
+}
+
+.side-bar {
+    border: 2px solid var(--russian-violet);
+    width: 20vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 6rem;
+}
+
+.side-bar h1 {
+    font-size: 4rem;
+}
+
+.add-book-form {
+    flex-direction: column;
+    display: flex;
+    row-gap: 2rem;
+    width: 100%;
+}
+
+.add-book-form input {
+    outline: none;
+    min-width: 100%;
+    box-sizing: border-box;
+
+    height: 3.6rem;
+    font-size: 2rem;
+    box-shadow: none;
+    border-radius: 4px;
+    border: 2px solid var(--russian-violet);
+    background-color: var(--russian-violet);
+}
+
+.add-book-form input::placeholder {
+    color: var(--lion);
+}
+
 .books-grid {
     border: 2px solid var(--russian-violet);
+    width: 80vw;
     height: 80vh;
-    width: 100vw;
 }
 
 .begin-btn {
@@ -91,6 +136,7 @@ body {
     box-shadow: 4px 4px 10px black;
 }
 
+
 .begin-btn:hover {
     transform: scale(1.06);
 }
@@ -99,9 +145,6 @@ body {
     transform: scale(1);
     filter: brightness(70%);
 }
-
-
-
 
 .footer {
     display: flex;
