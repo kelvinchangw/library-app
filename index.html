@@ -27,13 +27,13 @@
     <main class="main" id="main">
         <!-- Display books and also contain option to add a new book -->
         <div class="side-bar">
-            <h1>ADD BOOK</h1>
+            <h1 class="add-book-title">ADD BOOK</h1>
             <form class="add-book-form">
                 <input type="text" id="book-title" placeholder="Title" required>
                 <input type="text" id="book-author" placeholder="Author" required>
                 <input type="number" id="page-count" placeholder="Page Count" required>
             </form>
-            <button class="add-book-button">ADD BOOK</button>
+            <button class="add-book-button" aria-label="Add Book">+</button>
         </div>
         <div class="books-grid"></div>
     </main>

@@ -12,16 +12,22 @@
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+h1 {
+    /* line-height: 1; */
+    display: inline-block;
 }
 
 .title-wrapper {
     width: 80%; /* adjust this value based on your design preference */
     display: flex;
     justify-content: start; /* this aligns the title to the left */
+    height: auto;
 }
 
 .title {
-    font-weight: 600;
     font-size: 10rem;
     color: var(--platinum);
     text-shadow: 4px 4px 10px black;
@@ -82,10 +88,19 @@ body {
     display: flex;
     flex-direction: column;
     row-gap: 4rem;
+    align-items: center;
 }
 
-.side-bar h1 {
+.add-book-title {
     font-size: 4rem;
+    transition: 0.14s ease-out all;
+    text-shadow: 4px 4px 10px black;
+    user-select: none;
+}
+
+.add-book-title:hover {
+    letter-spacing: 2px;
+    color: var(--pale-dogwood);
 }
 
 .add-book-form {
@@ -111,6 +126,8 @@ body {
 
     border: 2.6px solid transparent;
     box-shadow: 0 0 0 1px var(--lion);
+
+    caret-color: var(--silver);
 }
 
 .add-book-form input:focus {
@@ -120,7 +137,27 @@ body {
 
 .add-book-form input::placeholder {
     color: var(--lion);
+    opacity: .3;
 }
+
+.add-book-button {
+    min-height: 4rem;
+    max-height: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.8rem;
+    font-size: 2rem;
+    border: transparent;
+    transition: 0.14s ease-out all;
+    user-select: none;
+    background-color: var(--russian-violet);
+    color: var(--platinum);
+    cursor: pointer;
+    box-shadow: 4px 4px 10px black;
+}
+
 
 .books-grid {
     border: 2px solid var(--russian-violet);
@@ -147,11 +184,11 @@ body {
 }
 
 
-.begin-btn:hover {
+button:hover {
     transform: scale(1.06);
 }
 
-.begin-btn:active {
+button:active {
     transform: scale(1);
     filter: brightness(70%);
 }
