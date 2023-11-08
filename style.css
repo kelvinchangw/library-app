@@ -220,7 +220,7 @@ body {
 
 .read-complete {
     border: 2.6px solid var(--lion);
-    /* box-shadow: 0 0 0 1px transparent; */
+    color: var(--lion);
 }
 
 .begin-btn {

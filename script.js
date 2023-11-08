@@ -12,10 +12,11 @@ window.addEventListener("load", function() {
 const myLibrary = [];
 
 // Constructor for creating a new Book object
-function Book(title, author, pageCount) {
+function Book(title, author, pageCount, read = false) {
     this.title = title;
     this.author = author;
     this.pageCount = pageCount;
+    this.read = read;
 }
 
 // DOM Elements
@@ -25,7 +26,7 @@ const pageCountInput = document.getElementById("page-count");
 const booksGrid = document.querySelector(".books-grid");
 
 function addBookToLibrary() {
-    const newBook = new Book(titleInput.value, authorInput.value, pageCountInput.value);
+    const newBook = new Book(titleInput.value, authorInput.value, pageCountInput.value, false);
 
     myLibrary.push(newBook);
 
@@ -40,6 +41,13 @@ function displayBooks() {
     myLibrary.forEach((book, index) => {
         const bookCard = document.createElement("div");
         bookCard.classList.add("book-card");
+
+        if (book.read) {
+            bookCard.classList.add('read-complete');
+        } else {
+            bookCard.classList.remove('read-complete');
+        }
+          
 
         bookCard.innerHTML = `
             <p class="book-title">${book.title}</p>
@@ -101,7 +109,6 @@ beginButton.addEventListener(("click"), () => {
 
 
 // Read status for each card
-const readBtn = document.querySelectorAll(".read-button");
 const bookCards = document.querySelectorAll(".book-card");
 
 function changeReadStatus() {
@@ -110,6 +117,10 @@ function changeReadStatus() {
 
 booksGrid.addEventListener("click", function(event) {
     if(event.target && event.target.matches(".read-button")) {
-        changeReadStatus.call(event.target);
+        const bookCard = event.target.closest(".book-card");
+        const bookIndex = Array.from(booksGrid.children).indexOf(bookCard);
+        myLibrary[bookIndex].read = !myLibrary[bookIndex].read;
+        
+        bookCard.classList.toggle("read-complete", myLibrary[bookIndex].read);
     }
 });
