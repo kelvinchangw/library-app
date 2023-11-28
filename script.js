@@ -24,9 +24,10 @@ const titleInput = document.getElementById("book-title");
 const authorInput = document.getElementById("book-author");
 const pageCountInput = document.getElementById("page-count");
 const booksGrid = document.querySelector(".books-grid");
+const readCheckbox = document.getElementById("read-checkbox");
 
 function addBookToLibrary() {
-    const newBook = new Book(titleInput.value, authorInput.value, pageCountInput.value, false);
+    const newBook = new Book(titleInput.value, authorInput.value, pageCountInput.value, readCheckbox.checked);
 
     myLibrary.push(newBook);
 
@@ -72,6 +73,7 @@ function eraseForm() {
     titleInput.value = "";
     authorInput.value = "";
     pageCountInput.value = "";
+    readCheckbox.checked = false;
 }
 
 const newBookForm = document.getElementsByClassName("add-book-form");
