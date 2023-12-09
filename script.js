@@ -97,7 +97,7 @@ function checkForm() {
 }
 
 // Listens for add new book button
-const addNewBookBtn = document.getElementById("add-book-button");
+const addNewBookBtn = document.getElementById("add-book-btn");
 addNewBookBtn.addEventListener("click", checkForm);
 
 // Smooth scroll to main container that has sidebar and book grid
