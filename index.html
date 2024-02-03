@@ -24,8 +24,22 @@
             <button class="begin-btn" id="begin-btn">BEGIN</button>
         </div>
     </header>
-    <main class="main container" id="main">
+    <main class="main" id="main">
         <!-- Display books and also contain option to add a new book -->
+        <div class="sidebar">
+            <h1 class="add-book-title">ADD BOOK</h1>
+            <form class="add-book-form">
+                <input type="text" id="book-title" placeholder="Title" maxlength="40" required>
+                <input type="text" id="book-author" placeholder="Author" maxlength="30" required>
+                <input type="number" id="page-count" placeholder="Page Count" required>
+                <label class="checkbox-container">
+                    <input type="checkbox" id="read-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="read-question">COMPLETE?</span>
+                </label>
+            </form>
+            <button class="add-book-btn" id="add-book-btn" aria-label="Add Book">+</button>
+        </div>
         <div class="books-grid"></div>
     </main>
     <footer class="footer">

@@ -12,16 +12,74 @@
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+/* Tag Elements */
+body {
+    background-color: var(--rich-black);
+    width: 100%;
+    color: var(--platinum);
+    overflow-wrap: break-word;
+}
+
+h1 {
+    display: inline-block;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    border: transparent;
+    transition: 0.14s ease-out all;
+    user-select: none;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.06);
+}
+
+button:active {
+    transform: scale(1);
+    filter: brightness(70%);
+}
+
+/* Shared Styles */
+.sidebar,
+.books-grid {
+    padding: 4rem;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.book-info,
+.read-status {
+    flex-basis: 40%;
+}
+
+/* Specific Component Styles */
+.background-container {
+    background-image: url("background.png");
+    background-size: cover;
+    height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 400px 0 0 400px;
 }
 
 .title-wrapper {
-    width: 80%; /* adjust this value based on your design preference */
+    width: 80%;
     display: flex;
-    justify-content: start; /* this aligns the title to the left */
+    justify-content: start;
+    height: auto;
 }
 
 .title {
-    font-weight: 600;
     font-size: 10rem;
     color: var(--platinum);
     text-shadow: 4px 4px 10px black;
@@ -34,9 +92,195 @@
     color: var(--pale-dogwood);
 }
 
-body {
-    background-color: var(--rich-black);
+.begin-btn {
+    min-height: 6rem;
+    max-height: 6rem;
+    width: 40rem;
+    font-size: 2rem;
+    background-color: var(--russian-violet);
+    color: var(--platinum);
+    box-shadow: 4px 4px 10px black;
+}
+
+.main {
+    height: 100vh;
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+    column-gap: 1rem;
+}
+
+.sidebar {
+    border: 2px solid var(--russian-violet);
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+    align-items: center;
+}
+
+.add-book-title {
+    font-size: 4rem;
+    transition: 0.14s ease-out all;
+    text-shadow: 4px 4px 10px black;
+    user-select: none;
+}
+
+.add-book-title:hover {
+    letter-spacing: 2px;
+    color: var(--pale-dogwood);
+}
+
+.add-book-form {
+    flex-direction: column;
+    display: flex;
+    row-gap: 2rem;
     width: 100%;
+}
+
+.add-book-form input {
+    outline: none;
+    min-width: 100%;
+    box-sizing: border-box;
+
+    height: 3.6rem;
+    font-size: 2rem;
+    box-shadow: none;
+    border-radius: 4px;
+    background-color: var(--russian-violet);
+    color: var(--lion);
+    padding: .4rem;
+    transition: all 0.4s ease-out;
+
+    border: 2.6px solid transparent;
+    box-shadow: 0 0 0 1px var(--lion);
+
+    caret-color: var(--silver);
+}
+
+.add-book-form input:focus {
+    border: 2.6px solid var(--silver);
+    box-shadow: 0 0 0 1px transparent;
+}
+
+.add-book-form input::placeholder {
+    color: var(--lion);
+    opacity: .3;
+}
+
+.add-book-form input.invalid {
+    border: 2.6px solid red;
+    box-shadow: 0 0 0 1px red;
+}
+
+.add-book-form .checkbox-container input {
+    display: none;
+}
+
+.checkbox-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+}
+
+.checkbox-container input:checked + .checkmark {
+    background-color: var(--lion);
+}
+
+.checkmark {
+    width: 3.6rem;
+    height: 3.6rem;
+    background-color: #eee;
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+    border-radius: 4px;
+    background-color: var(--russian-violet);
+    border: 2.6px solid transparent;
+    box-shadow: 0 0 0 1px var(--lion);
+}
+
+.read-question {
+    font-size: 2rem;
+}
+
+.add-book-btn {
+    height: 4rem;
+    width: 100%;
+    font-size: 2rem;
+    background-color: var(--russian-violet);
+    color: var(--platinum);
+    box-shadow: 4px 4px 10px black;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    grid-auto-rows: 360px;
+    gap: 2rem;
+    border: 2px solid var(--russian-violet);
+    width: 80vw;
+}
+
+.book-card {
+    transition: all .4s ease-out;
+    background-color: var(--russian-violet);
+    box-shadow: 4px 4px 10px black;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2.6px solid transparent;
+}
+
+.book-card .book-title {
+    font-size: 2.2rem;
+}
+.book-card .book-info p {
+    font-size: 1.2rem;
+}
+
+.book-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.read-button {
+    height: 100%;
+    width: 100%;
+    font-size: inherit;
+    background-color: var(--lion);
+    color: var(--platinum);
+    box-shadow: 1px 1px 6px black;
+}
+
+.read-complete {
+    border: 2.6px solid var(--lion);
+    color: var(--lion);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--platinum);
+    height: 4rem;
+    font-size: 1.4rem;
+    gap: 8px;
+}
+
+.fa-github-square {
+    transition: transform 0.3s ease-in-out;
+    color: var(--lion);
+    font-size: 2rem;
+}
+
+.fa-github-square:hover {
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: all 0.2s ease-in-out;
+    color: var(--platinum)
 }
 
 ::-webkit-scrollbar {
@@ -44,84 +288,6 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #888; /* Color of the draggable scroll handle */
-    border-radius: 6px; /* Radius of the draggable scroll handle */
-}
-
-
-.main {
-    height: 100vh;
-    padding: 4rem;
-    display: flex;
-    justify-content: center;
-}
-
-.background-container {
-    background-image: url("background.png");
-    background-size: cover;
-    height: 100vh;
-    box-sizing: border-box;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    padding: 400px 0 0 400px;
-}
-
-.books-grid {
-    border: 2px solid var(--russian-violet);
-    height: 80vh;
-    width: 100vw;
-}
-
-.begin-btn {
-    min-height: 6rem;
-    max-height: 6rem;
-    width: 40rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.8rem;
-    font-size: 1.6rem;
-    border: transparent;
-    transition: 0.14s ease-out all;
-    user-select: none;
-    background-color: var(--russian-violet);
-    color: var(--platinum);
-    cursor: pointer;
-    box-shadow: 4px 4px 10px black;
-}
-
-.begin-btn:hover {
-    transform: scale(1.06);
-}
-
-.begin-btn:active {
-    transform: scale(1);
-    filter: brightness(70%);
-}
-
-
-
-
-.footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--platinum);
-    height: 8vh;
-    font-size: 1.4rem;
-    gap: 8px;
-}
-
-
-.fa-github-square {
-    transition: transform 0.3s ease-in-out;
-    color: var(--lion);
-    font-size: 2rem;
-}
-.fa-github-square:hover {
-    cursor: pointer;
-    transform: rotate(360deg);
-    transition: all 0.2s ease-in-out;
-    color: var(--platinum)
+    background-color: var(--platinum); /* Color of the draggable scroll handle */
+    border-radius: 4px; /* Radius of the draggable scroll handle */
 }
